@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter App</title>
+    <style>
+        body {
+            background-color: rgb(206, 144, 144);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+
+        }
+
+
+        h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: rgb(48, 45, 42);
+        }
+
+        .count {
+            margin-top: 20px;
+            transition: all 0.4s ease;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .AllButtons {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-bottom: 15px;
+            padding-right: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(60, 58, 58, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-4px);
+        }
+
+        #increment {
+            color: white;
+            background-color: green;
+        }
+
+        #decrement {
+            color: white;
+            background-color: blue;
+        }
+
+        #reset {
+            color: rgb(255, 255, 255);
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="Text">Simple Counter App</h1>
+    <div class="count">0</div>
+    <div class="AllButtons">
+        <button id="increment" onclick="increment()">Increment</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        <button id="decrement" onclick="decrement()">Decrement</button>
+    </div>
+
+
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            UpDateDisplay()
+        }
+        function decrement() {
+            count--;
+            UpDateDisplay()
+        }
+        function reset() {
+            count = 0;
+            UpDateDisplay()
+        }
+
+        function UpDateDisplay() {
+            console.log(count);
+
+            document.getElementsByClassName('count')[0].innerText = count;
+        }
+    </script>
+
+</body>
+
+</html>
